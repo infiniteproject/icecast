@@ -11,5 +11,5 @@ icecast:
   ports:
     - "8000:8000"
   volumes:
-    ./icecast.xml:/etc/icecast/icecast.xml
+    ./icecast.xml:/etc/icecast.xml
 ```
