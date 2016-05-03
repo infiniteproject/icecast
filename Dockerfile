@@ -1,6 +1,6 @@
 FROM debian:latest
 
-MANTAINER infiniteproject@gmail.com
+MAINTAINER infiniteproject@gmail.com
 
 RUN apt-get update && apt-get install -y icecast2 && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
