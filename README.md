@@ -1,8 +1,8 @@
 # icecast
-Icecast for Docker, latest version.
+Icecast 2 for Docker based off Alpine Linux.
 
 Configuration:
-Edit required fields in icecast.xml and mount it inside the container.
+Edit required fields in icecast.xml and mount it inside the container replacing default configuration.
 
 Example docker-compose.yml:
 ```
