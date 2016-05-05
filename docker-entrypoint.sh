@@ -39,3 +39,8 @@ cat /etc/icecast2/icecast.xml
 
 # start icecast 
 icecast2 -c /etc/icecast2/icecast.xml
+
+# enable liquidsoap
+if [ -n "$LS_SCRIPT" ]; then
+    sudo -u liquidsoap liquidsoap -c $LS_SCRIPT
+fi 
