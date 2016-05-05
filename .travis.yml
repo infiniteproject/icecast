@@ -2,4 +2,4 @@ sudo: required
 services:
   - docker
 script:
-  - docker build -t infiniteproject/icecast
+  - docker build -t infiniteproject/icecast .
