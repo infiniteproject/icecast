@@ -10,6 +10,7 @@ RUN apt-get update && apt-get -y install icecast2 && apt-get clean && \
 VOLUME ["/etc/icecast2", "/var/log/icecast2"]
 EXPOSE 8000
 COPY ./docker-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 USER icecast2
