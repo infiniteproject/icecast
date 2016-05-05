@@ -9,8 +9,8 @@ icecast:
   container_name: icecast
   image: infiniteproject/icecast
   ports:
-    - "8000:8000"
-    - "8001:8001"
+    - 8000:8000
+    - 8001:8001
   volumes:
     ./icecast.xml:/etc/icecast.xml
   environment:
