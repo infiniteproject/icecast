@@ -8,6 +8,7 @@ RUN apt-get update && apt-get -y install icecast2 && apt-get clean && \
     rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 VOLUME ["/etc/icecast2", "/var/log/icecast2"]
+EXPOSE 8000
 COPY ./docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
