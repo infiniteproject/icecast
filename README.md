@@ -4,7 +4,7 @@ Icecast 2 for Docker based off Debian linux.
 
 Example run:
 ```
-docker run --name icecast -d -p 8000:8000 infiniteproject/icecast
+docker run -d -p 8000:8000 infiniteproject/icecast
 ```
 You can provide a limited set of env variables via -e or in docker-compose.yml; for advanced configuration mount your own icecast.xml inside the container. 
 
