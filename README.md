@@ -1,6 +1,6 @@
+[![Build Status](https://travis-ci.org/infiniteproject/icecast.svg?branch=master)](https://travis-ci.org/infiniteproject/icecast)
 # icecast
-Icecast 2 for Docker based off Debian linux. [![Build Status](https://travis-ci.org/infiniteproject/icecast.svg?branch=master)](https://travis-ci.org/infiniteproject/icecast)
-
+Icecast 2 for Docker based off Debian linux.
 Edit required fields in icecast.xml and mount it inside the container replacing default configuration file.
 
 Example docker-compose.yml:
