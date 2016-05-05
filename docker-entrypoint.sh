@@ -18,6 +18,12 @@ fi
 if [ -n "$ICECAST_ADMIN_EMAIL" ]; then
     sed -i "s/<admin>[^<]*<\/admin>/<admin>$ICECAST_ADMIN_EMAIL<\/admin>/g" /etc/icecast2/icecast.xml
 fi
+if [ -n "$ICECAST_LOCATION" ]; then
+    sed -i "s/<location>[^<]*<\/location>/<location>$ICECAST_LOCATION<\/location>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$ICECAST_HOSTNAME" ]; then
+    sed -i "s/<hostname>[^<]*<\/hostname>/<hostname>$ICECAST_HOSTNAME<\/hostname>/g" /etc/icecast2/icecast.xml
+fi
 if [ -n "$ICECAST_MAX_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_MAX_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
 fi
