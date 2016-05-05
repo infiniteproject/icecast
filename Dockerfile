@@ -9,7 +9,7 @@ COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 VOLUME /etc/icecast2
-EXPOSE 8000 8001
+EXPOSE 8000
 
 USER icecast2
 CMD ["icecast2 -c /etc/icecast2/icecast.xml"]
