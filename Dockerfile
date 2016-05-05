@@ -9,7 +9,7 @@ RUN apt-get update && apt-get -y install icecast2 liquidsoap && apt-get clean &&
 
 VOLUME /etc/icecast2
 VOLUME /var/log/icecast2
-COPY icecast.xml /etc/icecast/icecast.xml
+COPY icecast.xml /etc/icecast2/icecast.xml
 RUN chown -R icecast2 /etc/icecast2
 
 USER icecast2
