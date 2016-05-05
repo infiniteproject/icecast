@@ -34,5 +34,8 @@ echo "         <chroot>0</chroot>
     </security>
 </icecast>" >> /etc/icecast2/icecast.xml
 
+# show icecast.xml
+cat /etc/icecast2/icecast.xml 
+
 # start icecast 
 icecast2 -c /etc/icecast2/icecast.xml
