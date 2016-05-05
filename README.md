@@ -16,4 +16,7 @@ icecast:
     - "8001:8001"
   volumes:
     ./icecast.xml:/etc/icecast.xml
+  environment:
+    - ICECAST_SOURCE_PASSWORD=hackme
+    - ICECAST_ADMIN_PASSWORD=hackmemore
 ```
