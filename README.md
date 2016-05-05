@@ -8,6 +8,14 @@ docker run -d -p 8000:8000 infiniteproject/icecast
 ```
 You can provide a limited set of env variables via -e or in docker-compose.yml; for advanced configuration mount your own icecast.xml inside the container. 
 
+WARNING:
+icecast refuses to run as root so if using icecast.xml uncomment and change "nobody:nogroup" as below (this is forced if run with -e):
+```
+        <changeowner>
+            <user>icecast2</user>
+            <group>icecast</group>
+        </changeowner>
+```
 Example docker-compose.yml:
 ```
 icecast:
