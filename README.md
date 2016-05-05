@@ -13,4 +13,9 @@ icecast:
   volumes:
     ./icecast.xml:/etc/icecast/icecast.xml
   environment:
+    - ICECAST_SOURCE_PASSWORD=
+    - ICECAST_ADMIN_PASSWORD=
+    - ICECAST_RELAY_PASSWORD=
+    - ICECAST_ADMIN=
+    - ICECAST_CLIENTS=
 ```
