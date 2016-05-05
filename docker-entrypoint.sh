@@ -22,9 +22,17 @@ if [ -n "$ICECAST_MAX_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
 fi
 
-# cut after chroot and change user - dirty way
+# cut after <chroot>0<
+sed -n -i '/<chroot>0</q;p' /etc/icecast2/icecast.xml
 
-sed -n -i '/<chroot>/q;p' /etc/icecast2/icecast.xml
-echo '<chroot>0</chroot><changeowner><user>icecast2</user><group>icecast</group></changeowner></security></icecast>' >> /etc/icecast2/icecast.xml
+# add block with icecast2 user
+echo "         <chroot>0</chroot>
+        <changeowner>
+            <user>icecast2</user>
+            <group>icecast</group>
+        </changeowner>
+    </security>
+</icecast>" >> /etc/icecast2/icecast.xml
 
+# start icecast 
 icecast2 -c /etc/icecast2/icecast.xml
