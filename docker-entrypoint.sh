@@ -26,7 +26,7 @@ fi
 sed -n -i '/<chroot>0</q;p' /etc/icecast2/icecast.xml
 
 # add block with icecast2 user
-echo "         <chroot>0</chroot>
+echo "        <chroot>0</chroot>
         <changeowner>
             <user>icecast2</user>
             <group>icecast</group>
