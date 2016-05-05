@@ -19,7 +19,7 @@ if [ -n "$ICECAST_ADMIN_EMAIL" ]; then
     sed -i "s/<admin>[^<]*<\/admin>/<admin>$ICECAST_ADMIN_EMAIL<\/admin>/g" /etc/icecast2/icecast.xml
 fi
 if [ -n "$ICECAST_MAX_CLIENTS" ]; then
-    sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
+    sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_MAX_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
 fi
 
 # cut after <chroot>0<
