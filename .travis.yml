@@ -3,7 +3,8 @@ services:
   - docker
 before_install:
   - docker build -t infiniteproject/icecast .
-  - docker run -d -p 8000:8000 infiniteproject/icecast
+  - docker run --name icecast -d -p 8000:8000 infiniteproject/icecast
+  - docker exec -ti icecast cat /etc/icecast2/icecast.xml
 script:
   - docker ps -a
   - curl http://localhost:8000
