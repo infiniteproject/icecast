@@ -19,14 +19,15 @@ if [ -n "$ICECAST_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
 fi
 
-echo '<chroot>0</chroot>
+# cut after chroot and change user - dirty way
+
+sed -i '/<chroot>/q;p' /etc/icecast2/icecast.xml
+echo "        <chroot>0</chroot>
         <changeowner>
             <user>icecast2</user>
             <group>icecast</group>
         </changeowner>
-    ' > replace
-        
-awk ‘/\<security/{f=1;print;while (getline < “replace”){print}}/\/security/{f=0}!f’ /etc/icecast2/icecast.xml
+    </security>
+</icecast>" >> /etc/icecast2/icecast.xml
 
-cat /etc/icecast2/icecast.xml
 icecast2 -c /etc/icecast2/icecast.xml
