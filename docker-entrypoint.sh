@@ -20,3 +20,4 @@ if [ -n "$ICECAST_CLIENTS" ]; then
 fi
 
 cat /etc/icecast2/icecast.xml
+icecast2 -c /etc/icecast2/icecast.xml
