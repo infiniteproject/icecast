@@ -11,9 +11,7 @@ VOLUME ["/etc/icecast2"]
 EXPOSE 8000
 
 COPY ./docker-entrypoint.sh /entrypoint.sh
-#RUN curl -o /etc/icecast2/icecast.xml https://raw.githubusercontent.com/xiph/Icecast-Server/master/conf/icecast.xml.in
 RUN chmod +x /entrypoint.sh
 RUN chown -R icecast2:icecast /etc/icecast2/*
 
-USER icecast2
 ENTRYPOINT ["/entrypoint.sh"]
