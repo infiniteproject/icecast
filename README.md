@@ -1,5 +1,5 @@
 # icecast
-Icecast 2 for Docker based off Debian linux.
+Icecast 2 for Docker based off Debian linux. [![Build Status](https://travis-ci.org/infiniteproject/icecast.svg?branch=master)](https://travis-ci.org/infiniteproject/icecast)
 
 Edit required fields in icecast.xml and mount it inside the container replacing default configuration file.
 
