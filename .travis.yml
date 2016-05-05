@@ -3,7 +3,7 @@ services:
   - docker
 before_install:
   - docker build -t infiniteproject/icecast .
-  - docker run --name icecast -d -p 8000:8000 infiniteproject/icecast
+  - docker run --name icecast -d -p 8000:8000 -e ICECAST_ADMIN_PASSWORD=adminpw infiniteproject/icecast
 script:
   - docker ps -a
   - docker exec -ti icecast cat /etc/icecast2/icecast.xml
