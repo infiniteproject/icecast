@@ -40,7 +40,7 @@ cat /etc/icecast2/icecast.xml
 # start icecast 
 icecast2 -c /etc/icecast2/icecast.xml
 
-# enable liquidsoap
+# enable liquidsoap if LS_SCRIPT is set (point it to a working script inside the container)
 if [ -n "$LS_SCRIPT" ]; then
-    sudo -u liquidsoap liquidsoap -c $LS_SCRIPT
+    sudo -u liquidsoap liquidsoap $LS_SCRIPT --verbose
 fi 
