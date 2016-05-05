@@ -25,12 +25,6 @@ fi
 # cut after chroot and change user - dirty way
 
 sed -n -i '/<chroot>/q;p' /etc/icecast2/icecast.xml
-echo "        <chroot>0</chroot>
-        <changeowner>
-            <user>icecast2</user>
-            <group>icecast</group>
-        </changeowner>
-    </security>
-</icecast>" >> /etc/icecast2/icecast.xml
+echo '<chroot>0</chroot><changeowner><user>icecast2</user><group>icecast</group></changeowner></security></icecast>' >> /etc/icecast2/icecast.xml
 
 icecast2 -c /etc/icecast2/icecast.xml
