@@ -10,6 +10,6 @@ VOLUME ["/etc/icecast2", "/var/log/icecast2"]
 
 COPY ./docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-RUN chown -R icecast2:icecast /etc/icecast2/*
+RUN chown -R icecast2:icecast /etc/icecast2 /var/log/icecast2
 
 ENTRYPOINT ["/entrypoint.sh"]
