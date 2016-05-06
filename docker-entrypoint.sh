@@ -32,4 +32,4 @@ fi
 cat /etc/icecast.xml 
 
 # start icecast 
-icecast2 -c /etc/icecast.xml
+icecast -c /etc/icecast.xml
