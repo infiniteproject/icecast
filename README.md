@@ -7,7 +7,7 @@ Example run:
 docker run -d -p 8000:8000 infiniteproject/icecast:alpine
 ```
 You can provide a limited set of env variables via -e or in docker-compose.yml; for advanced configuration mount your own icecast.xml inside the container. 
-```
+
 Example docker-compose.yml:
 ```
 icecast:
