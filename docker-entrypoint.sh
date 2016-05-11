@@ -25,10 +25,8 @@ if [ -n "$ICECAST_MAX_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_MAX_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
 fi
 
-# cut after <chroot>0<
 sed -n -i '/<chroot>0</q;p' /etc/icecast2/icecast.xml
 
-# add block with icecast2 user
 echo "        <chroot>0</chroot>
         <changeowner>
             <user>icecast2</user>
