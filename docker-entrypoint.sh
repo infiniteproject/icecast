@@ -1,8 +1,5 @@
 #!/bin/sh
 
-env
-set -x
-
 if [ -n "$ICECAST_SOURCE_PASSWORD" ]; then
     sed -i "s/<source-password>[^<]*<\/source-password>/<source-password>$ICECAST_SOURCE_PASSWORD<\/source-password>/g" /etc/icecast.xml
 fi
@@ -28,8 +25,4 @@ if [ -n "$ICECAST_MAX_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_MAX_CLIENTS<\/clients>/g" /etc/icecast.xml
 fi
 
-# show icecast.xml
-cat /etc/icecast.xml 
-
-# start icecast 
 icecast -c /etc/icecast.xml
