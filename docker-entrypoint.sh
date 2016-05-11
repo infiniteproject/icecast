@@ -1,8 +1,5 @@
 #!/bin/sh
 
-env
-set -x
-
 if [ -n "$ICECAST_SOURCE_PASSWORD" ]; then
     sed -i "s/<source-password>[^<]*<\/source-password>/<source-password>$ICECAST_SOURCE_PASSWORD<\/source-password>/g" /etc/icecast2/icecast.xml
 fi
@@ -40,8 +37,4 @@ echo "        <chroot>0</chroot>
     </security>
 </icecast>" >> /etc/icecast2/icecast.xml
 
-# show icecast.xml
-cat /etc/icecast2/icecast.xml 
-
-# start icecast 
 icecast2 -c /etc/icecast2/icecast.xml
