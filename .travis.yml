@@ -6,5 +6,5 @@ before_install:
   - docker run --name icecast -d -p 8000:8000 infiniteproject/icecast
 script:
   - docker ps -a
-  - docker exec -ti icecast cat /etc/icecast2/icecast.xml
+  - docker exec -ti icecast cat /etc/icecast.xml
   - curl http://localhost:8000
