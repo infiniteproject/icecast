@@ -25,18 +25,4 @@ if [ -n "$ICECAST_MAX_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_MAX_CLIENTS<\/clients>/g" /etc/icecast.xml
 fi
 
-<<<<<<< HEAD
-sed -n -i '/<chroot>0</q;p' /etc/icecast2/icecast.xml
-
-echo "        <chroot>0</chroot>
-        <changeowner>
-            <user>icecast2</user>
-            <group>icecast</group>
-        </changeowner>
-    </security>
-</icecast>" >> /etc/icecast2/icecast.xml
-
-icecast2 -c /etc/icecast2/icecast.xml
-=======
 icecast -c /etc/icecast.xml
->>>>>>> alpine
