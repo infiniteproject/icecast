@@ -2,9 +2,9 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t infiniteproject/icecast .
-  - docker run --name icecast -d -p 8000:8000 infiniteproject/icecast
+  - docker build -t icecast .
+  - docker run --name icecast -d -p 8000:8000 icecast
 script:
   - docker ps -a
-  - docker exec -ti icecast cat /etc/icecast.xml
+  - docker exec -it icecast cat /etc/icecast.xml
   - curl http://localhost:8000
