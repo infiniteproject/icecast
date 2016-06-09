@@ -6,20 +6,11 @@ Example run:
 ```
 docker run -d -p 8000:8000 infiniteproject/icecast
 ```
-You can provide a limited set of env variables via -e or in docker-compose.yml:
+Supported ENV variables:
 
 ```
-icecast:
-  image: infiniteproject/icecast
-  ports:
-    - 8000:8000
-  environment:
-    - ICECAST_SOURCE_PASSWORD= 
-    - ICECAST_ADMIN_PASSWORD=
-    - ICECAST_RELAY_PASSWORD=
-    - ICECAST_ADMIN_USERNAME=
-    - ICECAST_ADMIN_EMAIL=
-    - ICECAST_LOCATION=
-    - ICECAST_HOSTNAME=
-    - ICECAST_MAX_CLIENTS=
+ICECAST_SOURCE_PASSWORD, ICECAST_ADMIN_PASSWORD, ICECAST_RELAY_PASSWORD
+ICECAST_ADMIN_USERNAME, ICECAST_ADMIN_EMAIL
+ICECAST_LOCATION, ICECAST_HOSTNAME
+ICECAST_MAX_CLIENTS
 ```
