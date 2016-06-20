@@ -5,8 +5,8 @@ RUN addgroup -S icecast && \
     adduser -S icecast
     
 RUN apk add --update \
-    icecast \
-    mailcap && \
+        icecast \
+        mailcap && \
     rm -rf /var/cache/apk/*
 
 COPY docker-entrypoint.sh /entrypoint.sh
