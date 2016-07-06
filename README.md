@@ -1,8 +1,6 @@
 [![Build Status](https://travis-ci.org/infiniteproject/icecast.svg?branch=master)](https://travis-ci.org/infiniteproject/icecast)
 # icecast
-Icecast 2 for Docker based off Alpine linux.
-
-Example run:
+Icecast 2 for Docker
 ```
 docker run -d -p 8000:8000 infiniteproject/icecast
 ```
