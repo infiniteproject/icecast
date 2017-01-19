@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER infiniteproject@gmail.com
+LABEL maintainer "infiniteproject@gmail.com"
 
 RUN addgroup -S icecast && \
     adduser -S icecast
