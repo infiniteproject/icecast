@@ -24,5 +24,8 @@ fi
 if [ -n "$ICECAST_MAX_CLIENTS" ]; then
     sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICECAST_MAX_CLIENTS<\/clients>/g" /etc/icecast.xml
 fi
+if [ -n "$ICECAST_CHARSET" ]; then
+    sed -i "s/<charset>[^<]*<\/charset>/<charset>$ICECAST_MAX_CLIENTS<\/charset>/g" /etc/icecast.xml
+fi
 
 exec "$@"
