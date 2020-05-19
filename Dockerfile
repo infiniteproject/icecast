@@ -7,7 +7,7 @@ RUN addgroup -S icecast && \
 RUN apk add --update \
         icecast \
         mailcap && \
-    rm -rf /var/cache/apk/*
+        apt-get clean
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
