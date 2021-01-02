@@ -28,4 +28,9 @@ if [ -n "$ICECAST_MAX_SOURCES" ]; then
     sed -i "s/<sources>[^<]*<\/sources>/<sources>$ICECAST_MAX_SOURCES<\/sources>/g" /etc/icecast.xml
 fi
 
+if [ -n "$ICECAST_EXTRA_PARAMETERS" ]; then
+	sed -i "s/<\/icecast>//" /etc/icecast.xml
+
+	echo "$ICECAST_EXTRA_PARAMETERS</icecast>" >> /etc/icecast.xml
+fi
 exec "$@"
